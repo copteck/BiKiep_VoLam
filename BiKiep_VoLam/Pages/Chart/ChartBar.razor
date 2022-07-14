@@ -1,0 +1,42 @@
+﻿@page "/bao-cao-cong-no/dashboard"
+<h3>CongNo</h3>
+
+@code {
+
+} 
+
+    <DxChart T="chart_demo"
+             Data="@lst_demo"
+             Width="100%">
+        <DxChartTitle Text="Population: Age Structure">
+            <DxChartSubTitle Text="Data Estimate for 2020" />
+        </DxChartTitle>
+        <DxChartBarSeries 
+                          T="chart_demo"
+                          TArgument="string"
+                          TValue="double"
+                          ArgumentField="pasi => pasi.name"
+                          ValueField="pasi => pasi.value"
+                          SummaryMethod="Enumerable.Sum"
+                          Visible="true"
+                           />
+         
+
+        <DxChartLegend Position="RelativePosition.Outside"
+                       HorizontalAlignment="HorizontalAlignment.Center"
+                       VerticalAlignment="VerticalEdge.Bottom" 
+                       Visible="true"
+                       Orientation="Orientation.Horizontal"
+                       />
+
+        <DxChartTooltip Enabled="true"
+                        Position="RelativePosition.Outside" >
+            <div style="margin: 0.75rem">
+                <div class="fw-bold">@context.Point.Argument</div>
+                <div>Age Group: @context.Point.SeriesName</div>
+                <div>Population: @($"{context.Point.Value:N0}")</div>
+            </div>
+        </DxChartTooltip>
+    </DxChart>
+
+     

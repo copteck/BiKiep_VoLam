@@ -1,0 +1,45 @@
+﻿@page "/grid"
+@using Demo_net6.Data
+@inject WeatherForecastService ForecastService
+
+
+@code {
+    private WeatherForecast[]? forecasts;
+
+    protected override async Task OnInitializedAsync()
+    {
+        forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
+    }
+}
+
+ 
+
+
+<ErrorBoundary>
+    <ChildContent>
+        <h2>DevExpress Grid</h2>
+
+        <p class="pb-2 pt-2 mw-1100">
+            The DevExpress Grid for Blazor allows you to display and manage data via a tabular (rows/columns) UI metaphor.
+            This page uses our Blazor Grid component to display weather forecast values.
+        </p>
+
+        @if (forecasts == null)
+        {
+            <p><em>Loading...</em></p>
+        }
+        else
+        {
+            <DxGrid Data="@forecasts"
+                CssClass="mw-1100">
+                <Columns>
+                    <DxGridDataColumn Caption="Date" FieldName="Date2" />
+                    <DxGridDataColumn Caption="Temperature" FieldName="TemperatureF" />
+                </Columns>
+            </DxGrid>
+        }
+    </ChildContent>
+    <ErrorContent>
+        <p class="errorUI">Nothing to see here right now. Sorry!</p>
+    </ErrorContent>
+</ErrorBoundary>

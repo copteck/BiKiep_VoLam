@@ -1,0 +1,79 @@
+﻿@page "/"
+@namespace BiKiep_VoLam.Pages
+@using Microsoft.AspNetCore.Components.Web
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BiKiep_VoLam</title>
+   @* <base href="~/" />
+    <link rel="stylesheet" href="css/blazing berry/bootstrap.min.css">
+    <link href="css/site.css" rel="stylesheet" />
+    <link href="BiKiep_VoLam.styles.css" rel="stylesheet" />
+    <link href="_content/DevExpress.Blazor/dx-blazor.css" rel="stylesheet" />
+
+*@
+
+    <link href="css/devextreme/dx.carmine.css" rel="stylesheet" />
+    
+
+    <base href="~/" />
+    <link href="_content/DevExpress.Blazor.Themes/purple.bs5.css" rel="stylesheet" />
+
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link href="BiKiep_VoLam.styles.css" rel="stylesheet" />
+    <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" />
+    @*<link href="_content/DevExpress.Blazor.RichEdit/dx-blazor-richedit.bs5.css" rel="stylesheet" />*@
+
+
+</head>
+<body>
+    @{
+        var isIEOrEdgeLegacy = Request.Headers["User-Agent"]
+            .Any(userAgent => userAgent.Contains("MSIE") || userAgent.Contains("Trident") || userAgent.Contains("Edge/"));
+    }
+    @if(isIEOrEdgeLegacy)
+    {
+        <component type="typeof(BiKiep_VoLam.Shared.BrowserNotSupported)" render-mode="Static" />
+    }
+    else
+    {
+        <component type="typeof(App)" render-mode="ServerPrerendered" />
+
+        <div id="blazor-error-ui">
+            <environment include="Staging,Production">
+                An error has occurred. This application may no longer respond until reloaded.
+            </environment>
+            <environment include="Development">
+                An unhandled exception has occurred. See browser dev tools for details.
+            </environment>
+            <a href="" class="reload">Reload</a>
+            <a class="dismiss">��</a>
+        </div>
+
+
+
+        <script src="../lib/jquery/jquery.min.js"></script>
+        <script src="~/lib/jquery/rss.js"></script>
+    
+        <script src="_framework/blazor.server.js"></script>
+        <script src="~/js/devextreme/dx-quill.js"></script>
+        <script src="~/js/devextreme/dx.all.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/3.8.0/exceljs.min.js"></script>
+        <script src="~/js/filesave.js"></script>
+
+        <script>
+
+
+
+        </script>
+
+    }
+</body>
+</html>

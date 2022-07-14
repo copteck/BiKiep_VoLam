@@ -1,0 +1,37 @@
+﻿@using Microsoft.AspNetCore.Components.Web
+@namespace Demo_net6.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="~/" />
+    <link href="_content/DevExpress.Blazor.Themes/purple.bs5.css" rel="stylesheet" />
+
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link href="Demo_net6.styles.css" rel="stylesheet" />
+    <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" />
+    <link href="_content/DevExpress.Blazor.RichEdit/dx-blazor-richedit.bs5.css" rel="stylesheet" />
+</head>
+<body>
+    @{
+        var isIEOrEdgeLegacy = Context.Request.Headers["User-Agent"]
+            .Any(userAgent => userAgent.Contains("MSIE") || userAgent.Contains("Trident") || userAgent.Contains("Edge/"));
+    }
+    @if(isIEOrEdgeLegacy)
+    {
+        <component type="typeof(Demo_net6.Shared.BrowserNotSupported)" render-mode="Static" />
+    }
+    else
+    {
+ 
+         
+                @RenderBody()
+             
+
+        <script src="_framework/blazor.server.js"></script>
+    }
+</body>
+</html>

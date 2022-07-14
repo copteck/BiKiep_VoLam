@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="the15901_TWL_ERP_ProModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DM_TaiLieu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ma_tailieu" Type="nvarchar" MaxLength="250" />
+          <Property Name="ten_tailieu" Type="nvarchar" MaxLength="250" />
+          <Property Name="ma_tailieu_cha" Type="nvarchar" MaxLength="50" />
+          <Property Name="stt" Type="int" />
+          <Property Name="ma_nhom_tailieu" Type="nvarchar" MaxLength="250" />
+          <Property Name="url" Type="nvarchar" MaxLength="500" />
+          <Property Name="ghichu" Type="nvarchar" MaxLength="250" />
+          <Property Name="khongsudung" Type="int" />
+          <Property Name="ngaytao" Type="datetime" />
+          <Property Name="nguoitao" Type="nvarchar" MaxLength="50" />
+          <Property Name="ngaysua" Type="datetime" />
+          <Property Name="nguoisua" Type="nvarchar" MaxLength="50" />
+          <Property Name="ngayxoa" Type="datetime" />
+          <Property Name="nguoixoa" Type="nvarchar" MaxLength="50" />
+          <Property Name="daxoa" Type="int" />
+          <Property Name="phienban" Type="varchar" MaxLength="50" />
+          <Property Name="rowlog" Type="nvarchar(max)" />
+          <Property Name="database_name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="the15901_TWL_ERP_ProModelStoreContainer">
+          <EntitySet Name="DM_TaiLieu" EntityType="Self.DM_TaiLieu" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="the15901_TWL_ERP_ProModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="DM_TaiLieu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Guid" Nullable="false" />
+          <Property Name="ma_tailieu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ten_tailieu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ma_tailieu_cha" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="stt" Type="Int32" />
+          <Property Name="ma_nhom_tailieu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ghichu" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="khongsudung" Type="Int32" />
+          <Property Name="ngaytao" Type="DateTime" Precision="3" />
+          <Property Name="nguoitao" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ngaysua" Type="DateTime" Precision="3" />
+          <Property Name="nguoisua" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ngayxoa" Type="DateTime" Precision="3" />
+          <Property Name="nguoixoa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="daxoa" Type="Int32" />
+          <Property Name="phienban" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="rowlog" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="database_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="chucpcdxcontext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DM_TaiLieu" EntityType="Self.DM_TaiLieu" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="the15901_TWL_ERP_ProModelStoreContainer" CdmEntityContainer="chucpcdxcontext">
+          <EntitySetMapping Name="DM_TaiLieu">
+            <EntityTypeMapping TypeName="the15901_TWL_ERP_ProModel.DM_TaiLieu">
+              <MappingFragment StoreEntitySet="DM_TaiLieu">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ma_tailieu" ColumnName="ma_tailieu" />
+                <ScalarProperty Name="ten_tailieu" ColumnName="ten_tailieu" />
+                <ScalarProperty Name="ma_tailieu_cha" ColumnName="ma_tailieu_cha" />
+                <ScalarProperty Name="stt" ColumnName="stt" />
+                <ScalarProperty Name="ma_nhom_tailieu" ColumnName="ma_nhom_tailieu" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+                <ScalarProperty Name="khongsudung" ColumnName="khongsudung" />
+                <ScalarProperty Name="ngaytao" ColumnName="ngaytao" />
+                <ScalarProperty Name="nguoitao" ColumnName="nguoitao" />
+                <ScalarProperty Name="ngaysua" ColumnName="ngaysua" />
+                <ScalarProperty Name="nguoisua" ColumnName="nguoisua" />
+                <ScalarProperty Name="ngayxoa" ColumnName="ngayxoa" />
+                <ScalarProperty Name="nguoixoa" ColumnName="nguoixoa" />
+                <ScalarProperty Name="daxoa" ColumnName="daxoa" />
+                <ScalarProperty Name="phienban" ColumnName="phienban" />
+                <ScalarProperty Name="rowlog" ColumnName="rowlog" />
+                <ScalarProperty Name="database_name" ColumnName="database_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

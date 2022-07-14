@@ -1,0 +1,79 @@
+﻿@page "/import_excell"
+<h3>Imports_excell</h3>
+
+@code {
+
+}
+
+
+<button class="btn btn-success" @onclick="excell_reader"> GetData</button>
+
+@if (lst != null)
+{
+    <table class="table table-bordered">
+        <tbody>
+            @foreach (var items in lst)
+            {
+                <tr>
+                    <td>@items.col_01</td>
+                    <td>@items.col_02</td>
+                    <td>@items.col_03</td>
+                    <td>@items.col_04</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}
+@using Microsoft.AspNetCore.Hosting;
+@using Microsoft.Extensions.Logging;
+@using Microsoft.AspNetCore.Components;
+@using System.Data;
+
+@inject ILogger<Imports_excell>    Logger
+@inject IWebHostEnvironment Environment;
+
+
+
+<p>
+    <label>
+        @* Upload up to @maxAllowedFiles of up to @maxFileSize bytes:*@
+        <InputFile OnChange="@LoadFiles" multiple />
+    </label>
+</p>
+
+<p>
+    <label>
+        @* Upload up to @maxAllowedFiles of up to @maxFileSize bytes:*@
+        <InputFile OnChange="@ImportFile" multiple />
+    </label>
+</p>
+
+
+@if (dt != null)
+{
+    <table>
+        <thead>
+            <tr>
+                @foreach (DataColumn col in dt.Columns)
+                {
+                    <th>@col.ColumnName</th>
+
+
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (DataRow dr in dt.Rows)
+            {
+                <tr>
+                    @foreach (DataColumn col in dt.Columns)
+                    {
+                        <td>@dr[col.ColumnName].ToString()</td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+
+}

@@ -1,0 +1,585 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="the15901_TWL_ERP_ProModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="pks_cohoivieclam">
+          <Key>
+            <PropertyRef Name="soid" />
+          </Key>
+          <Property Name="soid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ma_chinhanh" Type="nvarchar" MaxLength="50" />
+          <Property Name="ngay_khaosat" Type="datetime" />
+          <Property Name="kh_hoten" Type="nvarchar" MaxLength="50" />
+          <Property Name="kh_diachi" Type="nvarchar" MaxLength="500" />
+          <Property Name="kh_dienthoai" Type="nvarchar" MaxLength="50" />
+          <Property Name="kh_diadiem_khaosat" Type="nvarchar" MaxLength="500" />
+          <Property Name="kh_congviec" Type="nvarchar" MaxLength="500" />
+          <Property Name="kh_sogio_lamviec" Type="nvarchar" MaxLength="50" />
+          <Property Name="kh_congviec_hailong" Type="nvarchar" MaxLength="50" />
+          <Property Name="kh_thunhap_chiphihangngay" Type="nvarchar" MaxLength="50" />
+          <Property Name="kh_thunhap_chiphihangngay_tietkiem" Type="nvarchar" MaxLength="50" />
+          <Property Name="kh_thunhap_chiphihangngay_dulich_khac" Type="nvarchar" MaxLength="50" />
+          <Property Name="kh_thunhap_cao" Type="nvarchar" MaxLength="50" />
+          <Property Name="kh_thunhap_cao_lamthem" Type="nvarchar" MaxLength="50" />
+          <Property Name="kh_thunhap_cao_dautukinhdoanh" Type="nvarchar" MaxLength="50" />
+          <Property Name="kh_thunhap_cao_thangtien" Type="nvarchar" MaxLength="50" />
+          <Property Name="kh_thunhap_cao_khac" Type="nvarchar" MaxLength="50" />
+          <Property Name="kh_congviec_chon_thoigianlinhhoat" Type="nvarchar" MaxLength="50" />
+          <Property Name="kh_congviec_chon_theokhanang" Type="nvarchar" MaxLength="50" />
+          <Property Name="kh_congviec_chon_theokhanangthangtien" Type="nvarchar" MaxLength="50" />
+          <Property Name="kh_congviec_chon_theocohoihochoi_dulich" Type="nvarchar" MaxLength="50" />
+          <Property Name="kh_congviec_chon_theokhac" Type="nvarchar" MaxLength="50" />
+          <Property Name="kh_dongytimhieu" Type="nvarchar" MaxLength="50" />
+          <Property Name="kh_thoigian_thamgia" Type="nvarchar" MaxLength="50" />
+          <Property Name="ma_nv_phutrach" Type="nvarchar" MaxLength="50" />
+          <Property Name="ctv_ten" Type="nvarchar" MaxLength="500" />
+          <Property Name="ctv_dienthoai" Type="nvarchar" MaxLength="50" />
+          <Property Name="ngaytao" Type="datetime" />
+          <Property Name="nguoitao" Type="nvarchar" MaxLength="50" />
+          <Property Name="ngaysua" Type="datetime" />
+          <Property Name="nguoisua" Type="nvarchar" MaxLength="50" />
+          <Property Name="ngayxoa" Type="datetime" />
+          <Property Name="nguoixoa" Type="nvarchar" MaxLength="50" />
+          <Property Name="daxoa" Type="int" />
+          <Property Name="phienban" Type="varchar" MaxLength="50" />
+          <Property Name="rowlog" Type="nvarchar(max)" />
+          <Property Name="database_name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="pks_duhoc_capquyenuutien">
+          <Key>
+            <PropertyRef Name="soid" />
+          </Key>
+          <Property Name="soid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ma_chinhanh" Type="nvarchar" MaxLength="50" />
+          <Property Name="ngay_khaosat" Type="datetime" />
+          <Property Name="cha_hoten" Type="nvarchar" MaxLength="500" />
+          <Property Name="cha_nghenghiep" Type="nvarchar" MaxLength="500" />
+          <Property Name="me_hoten" Type="nvarchar" MaxLength="500" />
+          <Property Name="me_nghenghiep" Type="nvarchar" MaxLength="500" />
+          <Property Name="diachi_nha" Type="nvarchar" MaxLength="500" />
+          <Property Name="dienthoai" Type="nvarchar" MaxLength="50" />
+          <Property Name="diachi" Type="nvarchar" MaxLength="500" />
+          <Property Name="tc_01_kehoach" Type="nvarchar" MaxLength="50" />
+          <Property Name="tc_02_khokhan" Type="nvarchar" MaxLength="50" />
+          <Property Name="tc_03_lolang" Type="nvarchar" MaxLength="500" />
+          <Property Name="tc_04_dinhuongduhoc" Type="nvarchar" MaxLength="50" />
+          <Property Name="tc_05_cungthamdu" Type="nvarchar" MaxLength="50" />
+          <Property Name="ma_nv_phutrach" Type="nvarchar" MaxLength="50" />
+          <Property Name="ten_ctv" Type="nvarchar" MaxLength="50" />
+          <Property Name="thoigian_thamdu" Type="int" />
+          <Property Name="kehoach_nghihuu" Type="nvarchar(max)" />
+          <Property Name="ngay_thamdu" Type="date" />
+          <Property Name="so_dienthoai" Type="nvarchar" MaxLength="50" />
+          <Property Name="ngaytao" Type="datetime" />
+          <Property Name="nguoitao" Type="nvarchar" MaxLength="50" />
+          <Property Name="ngaysua" Type="datetime" />
+          <Property Name="nguoisua" Type="nvarchar" MaxLength="50" />
+          <Property Name="ngayxoa" Type="datetime" />
+          <Property Name="nguoixoa" Type="nvarchar" MaxLength="50" />
+          <Property Name="daxoa" Type="int" />
+          <Property Name="phienban" Type="varchar" MaxLength="50" />
+          <Property Name="rowlog" Type="nvarchar(max)" />
+          <Property Name="database_name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="pks_duhoc_capquyenuutien_ct">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="soid" Type="uniqueidentifier" />
+          <Property Name="hoten" Type="nvarchar" MaxLength="500" />
+          <Property Name="ngaysinh" Type="datetime" />
+          <Property Name="danghoclop" Type="int" />
+          <Property Name="hoclucnamtruoc" Type="nvarchar" MaxLength="500" />
+          <Property Name="ghichu" Type="nvarchar" MaxLength="500" />
+          <Property Name="ngaytao" Type="datetime" />
+          <Property Name="nguoitao" Type="nvarchar" MaxLength="50" />
+          <Property Name="ngaysua" Type="datetime" />
+          <Property Name="nguoisua" Type="nvarchar" MaxLength="50" />
+          <Property Name="ngayxoa" Type="datetime" />
+          <Property Name="nguoixoa" Type="nvarchar" MaxLength="50" />
+          <Property Name="daxoa" Type="int" />
+          <Property Name="phienban" Type="varchar" MaxLength="50" />
+          <Property Name="rowlog" Type="nvarchar(max)" />
+          <Property Name="database_name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="pks_nhucaukhachhang">
+          <Key>
+            <PropertyRef Name="soid" />
+          </Key>
+          <Property Name="soid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ma_chinhanh" Type="nvarchar" MaxLength="50" />
+          <Property Name="ngay_khaosat" Type="datetime" />
+          <Property Name="hoten" Type="nchar" MaxLength="10" />
+          <Property Name="ngaysinh" Type="datetime" />
+          <Property Name="gioitinh" Type="nvarchar" MaxLength="50" />
+          <Property Name="dienthoai" Type="nvarchar" MaxLength="50" />
+          <Property Name="diachi_nharieng" Type="nvarchar" MaxLength="500" />
+          <Property Name="noilamviec" Type="nvarchar" MaxLength="500" />
+          <Property Name="nghenghiep" Type="nvarchar" MaxLength="500" />
+          <Property Name="tinhtranghonnhan" Type="nvarchar" MaxLength="50" />
+          <Property Name="ma_nv_phutrach" Type="nvarchar" MaxLength="50" />
+          <Property Name="ten_ctv" Type="nvarchar" MaxLength="50" />
+          <Property Name="thoigian_thamdu" Type="int" />
+          <Property Name="kehoach_nghihuu" Type="nvarchar(max)" />
+          <Property Name="ngay_thamdu" Type="date" />
+          <Property Name="so_dienthoai" Type="nvarchar" MaxLength="50" />
+          <Property Name="ngaytao" Type="datetime" />
+          <Property Name="nguoitao" Type="nvarchar" MaxLength="50" />
+          <Property Name="ngaysua" Type="datetime" />
+          <Property Name="nguoisua" Type="nvarchar" MaxLength="50" />
+          <Property Name="ngayxoa" Type="datetime" />
+          <Property Name="nguoixoa" Type="nvarchar" MaxLength="50" />
+          <Property Name="daxoa" Type="int" />
+          <Property Name="phienban" Type="varchar" MaxLength="50" />
+          <Property Name="rowlog" Type="nvarchar(max)" />
+          <Property Name="database_name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="pks_nhucaukhachhang_ct">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="soid" Type="uniqueidentifier" />
+          <Property Name="ma_nhucau" Type="nvarchar" MaxLength="50" />
+          <Property Name="ten_nhucau" Type="nvarchar" MaxLength="500" />
+          <Property Name="stt" Type="int" />
+          <Property Name="is_checked" Type="nvarchar" MaxLength="5" />
+          <Property Name="noidung" Type="nvarchar(max)" />
+          <Property Name="ngaytao" Type="datetime" />
+          <Property Name="nguoitao" Type="nvarchar" MaxLength="50" />
+          <Property Name="ngaysua" Type="datetime" />
+          <Property Name="nguoisua" Type="nvarchar" MaxLength="50" />
+          <Property Name="ngayxoa" Type="datetime" />
+          <Property Name="nguoixoa" Type="nvarchar" MaxLength="50" />
+          <Property Name="daxoa" Type="int" />
+          <Property Name="phienban" Type="varchar" MaxLength="50" />
+          <Property Name="rowlog" Type="nvarchar(max)" />
+          <Property Name="database_name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="pks_nhucaukhachhang_dm_nhucau">
+          <Key>
+            <PropertyRef Name="soid" />
+          </Key>
+          <Property Name="soid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ma_nhucau" Type="nvarchar" MaxLength="50" />
+          <Property Name="ten_nhucau" Type="nvarchar(max)" />
+          <Property Name="stt" Type="int" />
+          <Property Name="ngaytao" Type="datetime" />
+          <Property Name="nguoitao" Type="nvarchar" MaxLength="50" />
+          <Property Name="ngaysua" Type="datetime" />
+          <Property Name="nguoisua" Type="nvarchar" MaxLength="50" />
+          <Property Name="ngayxoa" Type="datetime" />
+          <Property Name="nguoixoa" Type="nvarchar" MaxLength="50" />
+          <Property Name="daxoa" Type="int" />
+          <Property Name="phienban" Type="varchar" MaxLength="50" />
+          <Property Name="rowlog" Type="nvarchar(max)" />
+          <Property Name="database_name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="the15901_TWL_ERP_ProModelStoreContainer">
+          <EntitySet Name="pks_cohoivieclam" EntityType="Self.pks_cohoivieclam" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="pks_duhoc_capquyenuutien" EntityType="Self.pks_duhoc_capquyenuutien" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="pks_duhoc_capquyenuutien_ct" EntityType="Self.pks_duhoc_capquyenuutien_ct" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="pks_nhucaukhachhang" EntityType="Self.pks_nhucaukhachhang" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="pks_nhucaukhachhang_ct" EntityType="Self.pks_nhucaukhachhang_ct" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="pks_nhucaukhachhang_dm_nhucau" EntityType="Self.pks_nhucaukhachhang_dm_nhucau" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="the15901_TWL_ERP_ProModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="the15901_TWL_ERP_ProEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="pks_cohoivieclam" EntityType="the15901_TWL_ERP_ProModel.pks_cohoivieclam" />
+          <EntitySet Name="pks_nhucaukhachhang" EntityType="the15901_TWL_ERP_ProModel.pks_nhucaukhachhang" />
+          <EntitySet Name="pks_nhucaukhachhang_ct" EntityType="the15901_TWL_ERP_ProModel.pks_nhucaukhachhang_ct" />
+          <EntitySet Name="pks_nhucaukhachhang_dm_nhucau" EntityType="the15901_TWL_ERP_ProModel.pks_nhucaukhachhang_dm_nhucau" />
+          <EntitySet Name="pks_duhoc_capquyenuutien" EntityType="the15901_TWL_ERP_ProModel.pks_duhoc_capquyenuutien" />
+          <EntitySet Name="pks_duhoc_capquyenuutien_ct" EntityType="the15901_TWL_ERP_ProModel.pks_duhoc_capquyenuutien_ct" />
+        </EntityContainer>
+        <EntityType Name="pks_cohoivieclam">
+          <Key>
+            <PropertyRef Name="soid" />
+          </Key>
+          <Property Name="soid" Type="Guid" Nullable="false" />
+          <Property Name="ma_chinhanh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ngay_khaosat" Type="DateTime" Precision="3" />
+          <Property Name="kh_hoten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="kh_diachi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="kh_dienthoai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="kh_diadiem_khaosat" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="kh_congviec" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="kh_sogio_lamviec" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="kh_congviec_hailong" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="kh_thunhap_chiphihangngay" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="kh_thunhap_chiphihangngay_tietkiem" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="kh_thunhap_chiphihangngay_dulich_khac" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="kh_thunhap_cao" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="kh_thunhap_cao_lamthem" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="kh_thunhap_cao_dautukinhdoanh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="kh_thunhap_cao_thangtien" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="kh_thunhap_cao_khac" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="kh_congviec_chon_thoigianlinhhoat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="kh_congviec_chon_theokhanang" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="kh_congviec_chon_theokhanangthangtien" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="kh_congviec_chon_theocohoihochoi_dulich" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="kh_congviec_chon_theokhac" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="kh_dongytimhieu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="kh_thoigian_thamgia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ma_nv_phutrach" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ctv_ten" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ctv_dienthoai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ngaytao" Type="DateTime" Precision="3" />
+          <Property Name="nguoitao" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ngaysua" Type="DateTime" Precision="3" />
+          <Property Name="nguoisua" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ngayxoa" Type="DateTime" Precision="3" />
+          <Property Name="nguoixoa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="daxoa" Type="Int32" />
+          <Property Name="phienban" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="rowlog" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="database_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="pks_nhucaukhachhang">
+          <Key>
+            <PropertyRef Name="soid" />
+          </Key>
+          <Property Name="soid" Type="Guid" Nullable="false" />
+          <Property Name="ma_chinhanh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ngay_khaosat" Type="DateTime" Precision="3" />
+          <Property Name="hoten" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="ngaysinh" Type="DateTime" Precision="3" />
+          <Property Name="gioitinh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dienthoai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="diachi_nharieng" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="noilamviec" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="nghenghiep" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="tinhtranghonnhan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ma_nv_phutrach" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ten_ctv" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="thoigian_thamdu" Type="Int32" />
+          <Property Name="kehoach_nghihuu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ngay_thamdu" Type="DateTime" Precision="0" />
+          <Property Name="so_dienthoai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ngaytao" Type="DateTime" Precision="3" />
+          <Property Name="nguoitao" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ngaysua" Type="DateTime" Precision="3" />
+          <Property Name="nguoisua" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ngayxoa" Type="DateTime" Precision="3" />
+          <Property Name="nguoixoa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="daxoa" Type="Int32" />
+          <Property Name="phienban" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="rowlog" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="database_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="pks_nhucaukhachhang_ct">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Guid" Nullable="false" />
+          <Property Name="soid" Type="Guid" />
+          <Property Name="ma_nhucau" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ten_nhucau" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="stt" Type="Int32" />
+          <Property Name="is_checked" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="noidung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ngaytao" Type="DateTime" Precision="3" />
+          <Property Name="nguoitao" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ngaysua" Type="DateTime" Precision="3" />
+          <Property Name="nguoisua" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ngayxoa" Type="DateTime" Precision="3" />
+          <Property Name="nguoixoa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="daxoa" Type="Int32" />
+          <Property Name="phienban" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="rowlog" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="database_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="pks_nhucaukhachhang_dm_nhucau">
+          <Key>
+            <PropertyRef Name="soid" />
+          </Key>
+          <Property Name="soid" Type="Guid" Nullable="false" />
+          <Property Name="ma_nhucau" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ten_nhucau" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="stt" Type="Int32" />
+          <Property Name="ngaytao" Type="DateTime" Precision="3" />
+          <Property Name="nguoitao" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ngaysua" Type="DateTime" Precision="3" />
+          <Property Name="nguoisua" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ngayxoa" Type="DateTime" Precision="3" />
+          <Property Name="nguoixoa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="daxoa" Type="Int32" />
+          <Property Name="phienban" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="rowlog" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="database_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="pks_duhoc_capquyenuutien">
+          <Key>
+            <PropertyRef Name="soid" />
+          </Key>
+          <Property Name="soid" Type="Guid" Nullable="false" />
+          <Property Name="ma_chinhanh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ngay_khaosat" Type="DateTime" Precision="3" />
+          <Property Name="cha_hoten" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="cha_nghenghiep" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="me_hoten" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="me_nghenghiep" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="diachi_nha" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="dienthoai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="diachi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="tc_01_kehoach" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tc_02_khokhan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tc_03_lolang" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="tc_04_dinhuongduhoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tc_05_cungthamdu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ma_nv_phutrach" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ten_ctv" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="thoigian_thamdu" Type="Int32" />
+          <Property Name="kehoach_nghihuu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ngay_thamdu" Type="DateTime" Precision="0" />
+          <Property Name="so_dienthoai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ngaytao" Type="DateTime" Precision="3" />
+          <Property Name="nguoitao" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ngaysua" Type="DateTime" Precision="3" />
+          <Property Name="nguoisua" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ngayxoa" Type="DateTime" Precision="3" />
+          <Property Name="nguoixoa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="daxoa" Type="Int32" />
+          <Property Name="phienban" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="rowlog" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="database_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="pks_duhoc_capquyenuutien_ct">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Guid" Nullable="false" />
+          <Property Name="soid" Type="Guid" />
+          <Property Name="hoten" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ngaysinh" Type="DateTime" Precision="3" />
+          <Property Name="danghoclop" Type="Int32" />
+          <Property Name="hoclucnamtruoc" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ghichu" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ngaytao" Type="DateTime" Precision="3" />
+          <Property Name="nguoitao" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ngaysua" Type="DateTime" Precision="3" />
+          <Property Name="nguoisua" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ngayxoa" Type="DateTime" Precision="3" />
+          <Property Name="nguoixoa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="daxoa" Type="Int32" />
+          <Property Name="phienban" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="rowlog" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="database_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="the15901_TWL_ERP_ProModelStoreContainer" CdmEntityContainer="the15901_TWL_ERP_ProEntities">
+          <EntitySetMapping Name="pks_cohoivieclam">
+            <EntityTypeMapping TypeName="the15901_TWL_ERP_ProModel.pks_cohoivieclam">
+              <MappingFragment StoreEntitySet="pks_cohoivieclam">
+                <ScalarProperty Name="database_name" ColumnName="database_name" />
+                <ScalarProperty Name="rowlog" ColumnName="rowlog" />
+                <ScalarProperty Name="phienban" ColumnName="phienban" />
+                <ScalarProperty Name="daxoa" ColumnName="daxoa" />
+                <ScalarProperty Name="nguoixoa" ColumnName="nguoixoa" />
+                <ScalarProperty Name="ngayxoa" ColumnName="ngayxoa" />
+                <ScalarProperty Name="nguoisua" ColumnName="nguoisua" />
+                <ScalarProperty Name="ngaysua" ColumnName="ngaysua" />
+                <ScalarProperty Name="nguoitao" ColumnName="nguoitao" />
+                <ScalarProperty Name="ngaytao" ColumnName="ngaytao" />
+                <ScalarProperty Name="ctv_dienthoai" ColumnName="ctv_dienthoai" />
+                <ScalarProperty Name="ctv_ten" ColumnName="ctv_ten" />
+                <ScalarProperty Name="ma_nv_phutrach" ColumnName="ma_nv_phutrach" />
+                <ScalarProperty Name="kh_thoigian_thamgia" ColumnName="kh_thoigian_thamgia" />
+                <ScalarProperty Name="kh_dongytimhieu" ColumnName="kh_dongytimhieu" />
+                <ScalarProperty Name="kh_congviec_chon_theokhac" ColumnName="kh_congviec_chon_theokhac" />
+                <ScalarProperty Name="kh_congviec_chon_theocohoihochoi_dulich" ColumnName="kh_congviec_chon_theocohoihochoi_dulich" />
+                <ScalarProperty Name="kh_congviec_chon_theokhanangthangtien" ColumnName="kh_congviec_chon_theokhanangthangtien" />
+                <ScalarProperty Name="kh_congviec_chon_theokhanang" ColumnName="kh_congviec_chon_theokhanang" />
+                <ScalarProperty Name="kh_congviec_chon_thoigianlinhhoat" ColumnName="kh_congviec_chon_thoigianlinhhoat" />
+                <ScalarProperty Name="kh_thunhap_cao_khac" ColumnName="kh_thunhap_cao_khac" />
+                <ScalarProperty Name="kh_thunhap_cao_thangtien" ColumnName="kh_thunhap_cao_thangtien" />
+                <ScalarProperty Name="kh_thunhap_cao_dautukinhdoanh" ColumnName="kh_thunhap_cao_dautukinhdoanh" />
+                <ScalarProperty Name="kh_thunhap_cao_lamthem" ColumnName="kh_thunhap_cao_lamthem" />
+                <ScalarProperty Name="kh_thunhap_cao" ColumnName="kh_thunhap_cao" />
+                <ScalarProperty Name="kh_thunhap_chiphihangngay_dulich_khac" ColumnName="kh_thunhap_chiphihangngay_dulich_khac" />
+                <ScalarProperty Name="kh_thunhap_chiphihangngay_tietkiem" ColumnName="kh_thunhap_chiphihangngay_tietkiem" />
+                <ScalarProperty Name="kh_thunhap_chiphihangngay" ColumnName="kh_thunhap_chiphihangngay" />
+                <ScalarProperty Name="kh_congviec_hailong" ColumnName="kh_congviec_hailong" />
+                <ScalarProperty Name="kh_sogio_lamviec" ColumnName="kh_sogio_lamviec" />
+                <ScalarProperty Name="kh_congviec" ColumnName="kh_congviec" />
+                <ScalarProperty Name="kh_diadiem_khaosat" ColumnName="kh_diadiem_khaosat" />
+                <ScalarProperty Name="kh_dienthoai" ColumnName="kh_dienthoai" />
+                <ScalarProperty Name="kh_diachi" ColumnName="kh_diachi" />
+                <ScalarProperty Name="kh_hoten" ColumnName="kh_hoten" />
+                <ScalarProperty Name="ngay_khaosat" ColumnName="ngay_khaosat" />
+                <ScalarProperty Name="ma_chinhanh" ColumnName="ma_chinhanh" />
+                <ScalarProperty Name="soid" ColumnName="soid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pks_nhucaukhachhang">
+            <EntityTypeMapping TypeName="the15901_TWL_ERP_ProModel.pks_nhucaukhachhang">
+              <MappingFragment StoreEntitySet="pks_nhucaukhachhang">
+                <ScalarProperty Name="database_name" ColumnName="database_name" />
+                <ScalarProperty Name="rowlog" ColumnName="rowlog" />
+                <ScalarProperty Name="phienban" ColumnName="phienban" />
+                <ScalarProperty Name="daxoa" ColumnName="daxoa" />
+                <ScalarProperty Name="nguoixoa" ColumnName="nguoixoa" />
+                <ScalarProperty Name="ngayxoa" ColumnName="ngayxoa" />
+                <ScalarProperty Name="nguoisua" ColumnName="nguoisua" />
+                <ScalarProperty Name="ngaysua" ColumnName="ngaysua" />
+                <ScalarProperty Name="nguoitao" ColumnName="nguoitao" />
+                <ScalarProperty Name="ngaytao" ColumnName="ngaytao" />
+                <ScalarProperty Name="so_dienthoai" ColumnName="so_dienthoai" />
+                <ScalarProperty Name="ngay_thamdu" ColumnName="ngay_thamdu" />
+                <ScalarProperty Name="kehoach_nghihuu" ColumnName="kehoach_nghihuu" />
+                <ScalarProperty Name="thoigian_thamdu" ColumnName="thoigian_thamdu" />
+                <ScalarProperty Name="ten_ctv" ColumnName="ten_ctv" />
+                <ScalarProperty Name="ma_nv_phutrach" ColumnName="ma_nv_phutrach" />
+                <ScalarProperty Name="tinhtranghonnhan" ColumnName="tinhtranghonnhan" />
+                <ScalarProperty Name="nghenghiep" ColumnName="nghenghiep" />
+                <ScalarProperty Name="noilamviec" ColumnName="noilamviec" />
+                <ScalarProperty Name="diachi_nharieng" ColumnName="diachi_nharieng" />
+                <ScalarProperty Name="dienthoai" ColumnName="dienthoai" />
+                <ScalarProperty Name="gioitinh" ColumnName="gioitinh" />
+                <ScalarProperty Name="ngaysinh" ColumnName="ngaysinh" />
+                <ScalarProperty Name="hoten" ColumnName="hoten" />
+                <ScalarProperty Name="ngay_khaosat" ColumnName="ngay_khaosat" />
+                <ScalarProperty Name="ma_chinhanh" ColumnName="ma_chinhanh" />
+                <ScalarProperty Name="soid" ColumnName="soid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pks_nhucaukhachhang_ct">
+            <EntityTypeMapping TypeName="the15901_TWL_ERP_ProModel.pks_nhucaukhachhang_ct">
+              <MappingFragment StoreEntitySet="pks_nhucaukhachhang_ct">
+                <ScalarProperty Name="database_name" ColumnName="database_name" />
+                <ScalarProperty Name="rowlog" ColumnName="rowlog" />
+                <ScalarProperty Name="phienban" ColumnName="phienban" />
+                <ScalarProperty Name="daxoa" ColumnName="daxoa" />
+                <ScalarProperty Name="nguoixoa" ColumnName="nguoixoa" />
+                <ScalarProperty Name="ngayxoa" ColumnName="ngayxoa" />
+                <ScalarProperty Name="nguoisua" ColumnName="nguoisua" />
+                <ScalarProperty Name="ngaysua" ColumnName="ngaysua" />
+                <ScalarProperty Name="nguoitao" ColumnName="nguoitao" />
+                <ScalarProperty Name="ngaytao" ColumnName="ngaytao" />
+                <ScalarProperty Name="noidung" ColumnName="noidung" />
+                <ScalarProperty Name="is_checked" ColumnName="is_checked" />
+                <ScalarProperty Name="stt" ColumnName="stt" />
+                <ScalarProperty Name="ten_nhucau" ColumnName="ten_nhucau" />
+                <ScalarProperty Name="ma_nhucau" ColumnName="ma_nhucau" />
+                <ScalarProperty Name="soid" ColumnName="soid" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pks_nhucaukhachhang_dm_nhucau">
+            <EntityTypeMapping TypeName="the15901_TWL_ERP_ProModel.pks_nhucaukhachhang_dm_nhucau">
+              <MappingFragment StoreEntitySet="pks_nhucaukhachhang_dm_nhucau">
+                <ScalarProperty Name="database_name" ColumnName="database_name" />
+                <ScalarProperty Name="rowlog" ColumnName="rowlog" />
+                <ScalarProperty Name="phienban" ColumnName="phienban" />
+                <ScalarProperty Name="daxoa" ColumnName="daxoa" />
+                <ScalarProperty Name="nguoixoa" ColumnName="nguoixoa" />
+                <ScalarProperty Name="ngayxoa" ColumnName="ngayxoa" />
+                <ScalarProperty Name="nguoisua" ColumnName="nguoisua" />
+                <ScalarProperty Name="ngaysua" ColumnName="ngaysua" />
+                <ScalarProperty Name="nguoitao" ColumnName="nguoitao" />
+                <ScalarProperty Name="ngaytao" ColumnName="ngaytao" />
+                <ScalarProperty Name="stt" ColumnName="stt" />
+                <ScalarProperty Name="ten_nhucau" ColumnName="ten_nhucau" />
+                <ScalarProperty Name="ma_nhucau" ColumnName="ma_nhucau" />
+                <ScalarProperty Name="soid" ColumnName="soid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pks_duhoc_capquyenuutien">
+            <EntityTypeMapping TypeName="the15901_TWL_ERP_ProModel.pks_duhoc_capquyenuutien">
+              <MappingFragment StoreEntitySet="pks_duhoc_capquyenuutien">
+                <ScalarProperty Name="database_name" ColumnName="database_name" />
+                <ScalarProperty Name="rowlog" ColumnName="rowlog" />
+                <ScalarProperty Name="phienban" ColumnName="phienban" />
+                <ScalarProperty Name="daxoa" ColumnName="daxoa" />
+                <ScalarProperty Name="nguoixoa" ColumnName="nguoixoa" />
+                <ScalarProperty Name="ngayxoa" ColumnName="ngayxoa" />
+                <ScalarProperty Name="nguoisua" ColumnName="nguoisua" />
+                <ScalarProperty Name="ngaysua" ColumnName="ngaysua" />
+                <ScalarProperty Name="nguoitao" ColumnName="nguoitao" />
+                <ScalarProperty Name="ngaytao" ColumnName="ngaytao" />
+                <ScalarProperty Name="so_dienthoai" ColumnName="so_dienthoai" />
+                <ScalarProperty Name="ngay_thamdu" ColumnName="ngay_thamdu" />
+                <ScalarProperty Name="kehoach_nghihuu" ColumnName="kehoach_nghihuu" />
+                <ScalarProperty Name="thoigian_thamdu" ColumnName="thoigian_thamdu" />
+                <ScalarProperty Name="ten_ctv" ColumnName="ten_ctv" />
+                <ScalarProperty Name="ma_nv_phutrach" ColumnName="ma_nv_phutrach" />
+                <ScalarProperty Name="tc_05_cungthamdu" ColumnName="tc_05_cungthamdu" />
+                <ScalarProperty Name="tc_04_dinhuongduhoc" ColumnName="tc_04_dinhuongduhoc" />
+                <ScalarProperty Name="tc_03_lolang" ColumnName="tc_03_lolang" />
+                <ScalarProperty Name="tc_02_khokhan" ColumnName="tc_02_khokhan" />
+                <ScalarProperty Name="tc_01_kehoach" ColumnName="tc_01_kehoach" />
+                <ScalarProperty Name="diachi" ColumnName="diachi" />
+                <ScalarProperty Name="dienthoai" ColumnName="dienthoai" />
+                <ScalarProperty Name="diachi_nha" ColumnName="diachi_nha" />
+                <ScalarProperty Name="me_nghenghiep" ColumnName="me_nghenghiep" />
+                <ScalarProperty Name="me_hoten" ColumnName="me_hoten" />
+                <ScalarProperty Name="cha_nghenghiep" ColumnName="cha_nghenghiep" />
+                <ScalarProperty Name="cha_hoten" ColumnName="cha_hoten" />
+                <ScalarProperty Name="ngay_khaosat" ColumnName="ngay_khaosat" />
+                <ScalarProperty Name="ma_chinhanh" ColumnName="ma_chinhanh" />
+                <ScalarProperty Name="soid" ColumnName="soid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pks_duhoc_capquyenuutien_ct">
+            <EntityTypeMapping TypeName="the15901_TWL_ERP_ProModel.pks_duhoc_capquyenuutien_ct">
+              <MappingFragment StoreEntitySet="pks_duhoc_capquyenuutien_ct">
+                <ScalarProperty Name="database_name" ColumnName="database_name" />
+                <ScalarProperty Name="rowlog" ColumnName="rowlog" />
+                <ScalarProperty Name="phienban" ColumnName="phienban" />
+                <ScalarProperty Name="daxoa" ColumnName="daxoa" />
+                <ScalarProperty Name="nguoixoa" ColumnName="nguoixoa" />
+                <ScalarProperty Name="ngayxoa" ColumnName="ngayxoa" />
+                <ScalarProperty Name="nguoisua" ColumnName="nguoisua" />
+                <ScalarProperty Name="ngaysua" ColumnName="ngaysua" />
+                <ScalarProperty Name="nguoitao" ColumnName="nguoitao" />
+                <ScalarProperty Name="ngaytao" ColumnName="ngaytao" />
+                <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+                <ScalarProperty Name="hoclucnamtruoc" ColumnName="hoclucnamtruoc" />
+                <ScalarProperty Name="danghoclop" ColumnName="danghoclop" />
+                <ScalarProperty Name="ngaysinh" ColumnName="ngaysinh" />
+                <ScalarProperty Name="hoten" ColumnName="hoten" />
+                <ScalarProperty Name="soid" ColumnName="soid" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,156 @@
+﻿@page "/demo-rss"
+@inject IJSRuntime JS
+
+@using Microsoft.AspNetCore.Components;
+@using System.IO;
+@using System.Net;
+<h3>RSS_html_page</h3>
+
+<button @onclick="getdata_countpage" class="btn btn-success"> GetData </button>
+
+
+<div class="demo-container">
+    <div id="gridContainer"></div>
+</div>
+
+
+
+<div id="html_data" style="display:none">
+    
+
+
+
+</div>
+
+
+
+@if(lst_data_full != null)
+{
+    
+
+    <table class="table table-striped">
+
+
+        <thead>
+            <tr>
+                <th>tên</th>
+                <th>tên</th>
+                <th>địa chỉ</th>
+                <th>mst</th>
+            </tr>
+        </thead>
+        <tbody>
+
+
+            @foreach(var items in lst_data_full)
+            {
+               
+                <tr>
+                    <td>@j</td>
+                    <td>@items.ten</td>
+                    <td>@items.diachi</td>
+                    <td>@items.mst</td>
+                </tr>
+                j++;
+            }
+
+        </tbody>
+    </table>
+
+}
+
+
+
+<div id="html_ketqua" style="display:none">
+
+</div>
+
+
+
+
+
+@code {
+
+    int j = 0;
+    private MarkupString text;
+    private IJSObjectReference _jsModule;
+    private IJSObjectReference module;
+    private int sott { get; set; } = 0;
+
+    List<thongtin_doanhnghiep> lst_data_full { get; set; } = new List<thongtin_doanhnghiep>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        // module = await JS.InvokeAsync<IJSObjectReference>("import", "../lib/jquery/rss.js");
+
+
+
+
+
+    }
+
+
+    private async Task ConvertArray()
+    {
+        await JS.InvokeVoidAsync("getdata");
+    }
+
+
+
+
+
+
+    public async void getdata_countpage()
+    {
+        var rqst = (HttpWebRequest)WebRequest.Create(@"https://hosocongty.vn/");
+        rqst.Method = "POST";
+        rqst.ContentType = "text/xml";
+        rqst.ContentLength = 0;
+        rqst.Timeout = 3000;
+        var rspns = (HttpWebResponse)rqst.GetResponse();
+        var reader = new StreamReader(rspns.GetResponseStream());
+        string a = reader.ReadToEnd() + "<br>";
+        data_retuen _data_return = await JS.InvokeAsync<data_retuen>("count_data", a);
+        sott = _data_return.count_page;
+        getdata_data(sott);
+        StateHasChanged();
+    }
+
+
+    public async void getdata_data(int stt)
+    {
+
+        for (int i = 1;i< stt;i++)
+        {            
+            var rqst = (HttpWebRequest)WebRequest.Create(@"https://hosocongty.vn/page-"+ i.ToString());
+            rqst.Method = "POST";
+            rqst.ContentType = "text/xml";
+            rqst.ContentLength = 0;
+            rqst.Timeout = 3000;
+            var rspns = (HttpWebResponse)rqst.GetResponse();
+            var reader = new StreamReader(rspns.GetResponseStream());
+            string a = reader.ReadToEnd() + "<br>";
+            await JS.InvokeVoidAsync("getdata", a);
+            //lst_data_full.AddRange(await JS.InvokeAsync<List<thongtin_doanhnghiep>>("getdata", a));           
+            StateHasChanged();
+            if(i==sott-1)
+            {
+                show_data();
+            }
+        }
+
+
+    }
+
+
+
+    public async void show_data()
+    {
+        await JS.InvokeAsync<List<thongtin_doanhnghiep>>("showdata");
+    }
+
+
+}
+
+
+
